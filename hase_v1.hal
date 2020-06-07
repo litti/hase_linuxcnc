@@ -169,9 +169,9 @@ net z-enable     => hm2_7i76e.0.stepgen.02.enable
 
 net z-limit      <=  hm2_7i76e.0.7i76.0.0.input-15
 
-#net z-home-sw    =>  joint.2.home-sw-in
-#net z-neg-limit  =>  joint.2.neg-lim-sw-in
-net z-limit       =>  joint.2.pos-lim-sw-in
+net z-limit      =>  joint.2.home-sw-in
+#net z-limit  =>  joint.2.neg-lim-sw-in
+net z-limit      =>  joint.2.pos-lim-sw-in
 
 #******************************
 # connect miscellaneous signals
