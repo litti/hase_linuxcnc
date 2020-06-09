@@ -1,3 +1,6 @@
 # --- TB6, Pin 10; Input 10 ---
 # Connect JMC IHSV/IHSS alarm signal Z
 net z-axis-drive-alarm   <=  hm2_7i76e.0.7i76.0.0.input-10
+# --- TB6, Pin 8; Input 8 ---
+# Connect JMC IHSV/IHSS alarm signal X
+net x-axis-drive-alarm   <=  hm2_7i76e.0.7i76.0.0.input-8
