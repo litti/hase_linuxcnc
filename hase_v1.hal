@@ -66,9 +66,10 @@ net x-enable     => hm2_7i76e.0.stepgen.00.enable
 
 # ---setup home / limit switch signals---
 
-net x-home-sw     =>  joint.0.home-sw-in
-net x-neg-limit     =>  joint.0.neg-lim-sw-in
-net x-pos-limit     =>  joint.0.pos-lim-sw-in
+net x-limit-and-home     <=  hm2_7i76e.0.7i76.0.0.input-13
+net x-limit-and-home     =>  joint.0.home-sw-in
+net x-limit-and-home     =>  joint.0.neg-lim-sw-in
+net x-limit-and-home     =>  joint.0.pos-lim-sw-in
 
 #*******************
 #  AXIS Y JOINT 1
@@ -166,9 +167,9 @@ net z-enable     => hm2_7i76e.0.stepgen.02.enable
 
 # ---setup home / limit switch signals---
 
-net z-limit      <=  hm2_7i76e.0.7i76.0.0.input-15
-net z-limit      =>  joint.2.home-sw-in
-net z-limit      =>  joint.2.pos-lim-sw-in
+net z-pos-limit-and-home      <=  hm2_7i76e.0.7i76.0.0.input-15
+net z-pos-limit-and-home      =>  joint.2.home-sw-in
+net z-pos-limit-and-home      =>  joint.2.pos-lim-sw-in
 
 #******************************
 # connect miscellaneous signals
