@@ -4,7 +4,7 @@ pin+hm2_7i76e.0.7i76.0.0.input-13
 pin+joint.0.home-sw-in
 pin+joint.0.neg-lim-sw-in
 # limit switch y axis
-pin+hm2_7i76e.0.7i76.0.0.input-14
+pin+hm2_7i76e.0.7i76.0.0.input-14-not
 pin+joint.1.home-sw-in
 pin+joint.1.neg-lim-sw-in
 # limit switch z axis

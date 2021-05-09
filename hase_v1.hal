@@ -75,15 +75,15 @@ net x-limit-and-home     =>  joint.0.pos-lim-sw-in
 #  AXIS Y JOINT 1
 #*******************
 
-setp   pid.y.Pgain     [JOINT_1]P
-setp   pid.y.Igain     [JOINT_1]I
-setp   pid.y.Dgain     [JOINT_1]D
-setp   pid.y.bias      [JOINT_1]BIAS
-setp   pid.y.FF0       [JOINT_1]FF0
-setp   pid.y.FF1       [JOINT_1]FF1
-setp   pid.y.FF2       [JOINT_1]FF2
-setp   pid.y.deadband  [JOINT_1]DEADBAND
-setp   pid.y.maxoutput [JOINT_1]MAX_OUTPUT
+setp   pid.y.Pgain                 [JOINT_1]P
+setp   pid.y.Igain                 [JOINT_1]I
+setp   pid.y.Dgain                 [JOINT_1]D
+setp   pid.y.bias                  [JOINT_1]BIAS
+setp   pid.y.FF0                   [JOINT_1]FF0
+setp   pid.y.FF1                   [JOINT_1]FF1
+setp   pid.y.FF2                   [JOINT_1]FF2
+setp   pid.y.deadband              [JOINT_1]DEADBAND
+setp   pid.y.maxoutput             [JOINT_1]MAX_OUTPUT
 setp   pid.y.error-previous-target true
 
 net y-index-enable  <=> pid.y.index-enable
@@ -94,11 +94,11 @@ net y-output        <=  pid.y.output
 
 # Step Gen signals/setup
 
-setp   hm2_7i76e.0.stepgen.03.dirsetup        [JOINT_1]DIRSETUP
-setp   hm2_7i76e.0.stepgen.03.dirhold         [JOINT_1]DIRHOLD
-setp   hm2_7i76e.0.stepgen.03.steplen         [JOINT_1]STEPLEN
-setp   hm2_7i76e.0.stepgen.03.stepspace       [JOINT_1]STEPSPACE
-setp   hm2_7i76e.0.stepgen.03.position-scale  [JOINT_1]STEP_SCALE
+setp   hm2_7i76e.0.stepgen.03.dirsetup         [JOINT_1]DIRSETUP
+setp   hm2_7i76e.0.stepgen.03.dirhold          [JOINT_1]DIRHOLD
+setp   hm2_7i76e.0.stepgen.03.steplen          [JOINT_1]STEPLEN
+setp   hm2_7i76e.0.stepgen.03.stepspace        [JOINT_1]STEPSPACE
+setp   hm2_7i76e.0.stepgen.03.position-scale   [JOINT_1]STEP_SCALE
 setp   hm2_7i76e.0.stepgen.03.step_type        0
 setp   hm2_7i76e.0.stepgen.03.control-type     1
 setp   hm2_7i76e.0.stepgen.03.maxaccel         [JOINT_1]STEPGEN_MAXACCEL
@@ -116,7 +116,7 @@ net y-enable     => hm2_7i76e.0.stepgen.03.enable
 
 # ---setup home / limit switch signals---
 
-net y-limit-and-home     <=  hm2_7i76e.0.7i76.0.0.input-14
+net y-limit-and-home     <=  hm2_7i76e.0.7i76.0.0.input-14-not
 net y-limit-and-home     =>  joint.1.home-sw-in
 net y-limit-and-home     =>  joint.1.neg-lim-sw-in
 net y-limit-and-home     =>  joint.1.pos-lim-sw-in
@@ -125,15 +125,15 @@ net y-limit-and-home     =>  joint.1.pos-lim-sw-in
 #  AXIS Z JOINT 2
 #*******************
 
-setp   pid.z.Pgain     [JOINT_2]P
-setp   pid.z.Igain     [JOINT_2]I
-setp   pid.z.Dgain     [JOINT_2]D
-setp   pid.z.bias      [JOINT_2]BIAS
-setp   pid.z.FF0       [JOINT_2]FF0
-setp   pid.z.FF1       [JOINT_2]FF1
-setp   pid.z.FF2       [JOINT_2]FF2
-setp   pid.z.deadband  [JOINT_2]DEADBAND
-setp   pid.z.maxoutput [JOINT_2]MAX_OUTPUT
+setp   pid.z.Pgain                 [JOINT_2]P
+setp   pid.z.Igain                 [JOINT_2]I
+setp   pid.z.Dgain                 [JOINT_2]D
+setp   pid.z.bias                  [JOINT_2]BIAS
+setp   pid.z.FF0                   [JOINT_2]FF0
+setp   pid.z.FF1                   [JOINT_2]FF1
+setp   pid.z.FF2                   [JOINT_2]FF2
+setp   pid.z.deadband              [JOINT_2]DEADBAND
+setp   pid.z.maxoutput             [JOINT_2]MAX_OUTPUT
 setp   pid.z.error-previous-target true
 
 net z-index-enable  <=> pid.z.index-enable
@@ -144,11 +144,11 @@ net z-output        <=  pid.z.output
 
 # Step Gen signals/setup
 
-setp   hm2_7i76e.0.stepgen.02.dirsetup        [JOINT_2]DIRSETUP
-setp   hm2_7i76e.0.stepgen.02.dirhold         [JOINT_2]DIRHOLD
-setp   hm2_7i76e.0.stepgen.02.steplen         [JOINT_2]STEPLEN
-setp   hm2_7i76e.0.stepgen.02.stepspace       [JOINT_2]STEPSPACE
-setp   hm2_7i76e.0.stepgen.02.position-scale  [JOINT_2]STEP_SCALE
+setp   hm2_7i76e.0.stepgen.02.dirsetup         [JOINT_2]DIRSETUP
+setp   hm2_7i76e.0.stepgen.02.dirhold          [JOINT_2]DIRHOLD
+setp   hm2_7i76e.0.stepgen.02.steplen          [JOINT_2]STEPLEN
+setp   hm2_7i76e.0.stepgen.02.stepspace        [JOINT_2]STEPSPACE
+setp   hm2_7i76e.0.stepgen.02.position-scale   [JOINT_2]STEP_SCALE
 setp   hm2_7i76e.0.stepgen.02.step_type        0
 setp   hm2_7i76e.0.stepgen.02.control-type     1
 setp   hm2_7i76e.0.stepgen.02.maxaccel         [JOINT_2]STEPGEN_MAXACCEL
@@ -178,21 +178,21 @@ net z-pos-limit-and-home      =>  joint.2.pos-lim-sw-in
 
 #  ---HALUI signals---
 
-net axis-select-x  halui.axis.x.select
-net jog-x-pos      halui.axis.x.plus
-net jog-x-neg      halui.axis.x.minus
-net jog-x-analog   halui.axis.x.analog
-net x-is-homed     halui.joint.0.is-homed
-net axis-select-y  halui.axis.y.select
-net jog-y-pos      halui.axis.y.plus
-net jog-y-neg      halui.axis.y.minus
-net jog-y-analog   halui.axis.y.analog
-net y-is-homed     halui.joint.1.is-homed
-net axis-select-z  halui.axis.z.select
-net jog-z-pos      halui.axis.z.plus
-net jog-z-neg      halui.axis.z.minus
-net jog-z-analog   halui.axis.z.analog
-net z-is-homed     halui.joint.2.is-homed
+net axis-select-x         halui.axis.x.select
+net jog-x-pos             halui.axis.x.plus
+net jog-x-neg             halui.axis.x.minus
+net jog-x-analog          halui.axis.x.analog
+net x-is-homed            halui.joint.0.is-homed
+net axis-select-y         halui.axis.y.select
+net jog-y-pos             halui.axis.y.plus
+net jog-y-neg             halui.axis.y.minus
+net jog-y-analog          halui.axis.y.analog
+net y-is-homed            halui.joint.1.is-homed
+net axis-select-z         halui.axis.z.select
+net jog-z-pos             halui.axis.z.plus
+net jog-z-neg             halui.axis.z.minus
+net jog-z-analog          halui.axis.z.analog
+net z-is-homed            halui.joint.2.is-homed
 net jog-selected-pos      halui.axis.selected.plus
 net jog-selected-neg      halui.axis.selected.minus
 net spindle-manual-cw     halui.spindle.0.forward
