@@ -67,4 +67,5 @@ unlock_way = no
 show_preview_on_offset = False
 use_keyboard_shortcuts = False
 tool_in_spindle = 0
+hide_tooltips = False
 
