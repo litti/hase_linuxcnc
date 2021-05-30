@@ -120,14 +120,14 @@ net pdnt.button.probe-z whb.button.probe-z halui.mdi-command-08 # Probe-Z use MD
 #net pdnt.button.feed-minus whb.button.feed-minus
 
 # spindle related signals
-net pdnt.spindle.is-on whb.halui.spindle.is-on spindle.0.on
+#klären al net pdnt.spindle.is-on whb.halui.spindle.is-on spindle.0.on
 net pdnt.spindle.start whb.halui.spindle.start halui.spindle.0.start
 net pdnt.spindle.stop whb.halui.spindle.stop halui.spindle.0.stop
 net pdnt.spindle.forward whb.halui.spindle.forward halui.spindle.0.forward
 net pdnt.spindle.reverse whb.halui.spindle.reverse halui.spindle.0.reverse
 net pdnt.spindle.increase whb.halui.spindle.increase halui.spindle.0.increase # reserved whb.button.macro-3
 net pdnt.spindle.decrease whb.halui.spindle.decrease halui.spindle.0.decrease # reserved whb.button.macro-4
-net pdnt.spindle-speed-abs whb.halui.spindle-speed-cmd spindle.0.speed-out-abs # speed cmd from motion in rpm absolue
+#klären al net pdnt.spindle-speed-abs whb.halui.spindle-speed-cmd spindle.0.speed-out-abs # speed cmd from motion in rpm absolue
 
 # spindle speed override signals
 net pdnt.spindle-override.scale whb.halui.spindle-override.scale halui.spindle.0.override.scale # needed for both spindle+/- and spindleoverride+/- button

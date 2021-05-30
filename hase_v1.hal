@@ -80,9 +80,9 @@ net estop-out     =>  iocontrol.0.emc-enable-in
 
 #  ---toolchange signals for custom tool changer---
 
-net tool-number             <=  iocontrol.0.tool-prep-number
-net tool-change-request     <=  iocontrol.0.tool-change
-net tool-change-confirmed   =>  iocontrol.0.tool-changed
-net tool-prepare-request    <=  iocontrol.0.tool-prepare
-net tool-prepare-confirmed  =>  iocontrol.0.tool-prepared
+#net tool-number             <=  iocontrol.0.tool-prep-number
+#net tool-change-request     <=  iocontrol.0.tool-change
+#net tool-change-confirmed   =>  iocontrol.0.tool-changed
+#net tool-prepare-request    <=  iocontrol.0.tool-prepare
+#net tool-prepare-confirmed  =>  iocontrol.0.tool-prepared
 
