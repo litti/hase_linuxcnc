@@ -1,0 +1,25 @@
+# --- TB6, Pin 8; Input 8 ---
+# Connect JMC IHSV/IHSS alarm signal X
+net x-axis-drive-alarm   <=  hm2_7i76e.0.7i76.0.0.input-08
+# --- TB6, Pin 10; Input 10 ---
+# Connect JMC IHSV/IHSS alarm signal Z
+net z-axis-drive-alarm   <=  hm2_7i76e.0.7i76.0.0.input-10
+
+# ---DO-00 --- 
+# Start spindle water pump
+net cooling_enable   =>  hm2_7i76e.0.7i76.0.0.output-00
+
+# ---DO-01 --- DISABLED ATM AL !!!!!!!!!!!!!
+#addf or.coolant servo-thread
+#net coolant-flood or.coolant.in0 
+#net coolant-mist or.coolant.in1
+#net ortriggerpump or.coolant.out =>  hm2_7i76e.0.7i76.0.0.output-01 
+
+# --- DO-04 --- 
+# Maps Valve for spindle ATC bar: pressurize = release tool holder
+# valve 2.2 Air inlet / Werkzeugwechsel Spindel
+# when high this valve is open 
+# normal condition = drawbar closed ==> this pin = low
+#  signal drawbar_open is defined as: when high ==> OPEN
+# This means that this pin gets the inverted signal of drawbar_open (drawbar_open_inv) which is HIGH
+net drawbar_open  hm2_7i76e.0.7i76.0.0.output-04

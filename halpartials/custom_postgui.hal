@@ -1,2 +1,2 @@
 net spindle-at-speed => gmoccapy.spindle_at_speed_led 
-net spindle-vel-cmd-rpm => gmoccapy.spindle_feedback_bar
+net spindle-rpm-cmd  => gmoccapy.spindle_feedback_bar

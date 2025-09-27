@@ -1,0 +1,28 @@
+# Halshow settings
+# This file is generated automatically.
+wm geometry . 1238x707+665+131
+placeFrames 0.38226744186046513
+set ::ratio 0.38226744186046513
+set ::old_w_leftf 160
+set ::watchlist {
+    pin+hm2_7i76e.0.7i76.0.0.input-13-not
+    pin+joint.0.home-sw-in
+    pin+joint.0.pos-lim-sw-in
+    pin+joint.0.neg-lim-sw-in
+    pin+hm2_7i76e.0.7i76.0.0.input-14-not
+    pin+joint.1.home-sw-in
+    pin+joint.1.pos-lim-sw-in
+    pin+joint.1.neg-lim-sw-in
+    pin+hm2_7i76e.0.7i76.0.0.input-15-not
+    pin+joint.2.home-sw-in
+    pin+joint.2.pos-lim-sw-in
+    pin+hm2_7i76e.0.7i76.0.0.input-23
+    pin+hm2_7i76e.0.7i76.0.0.input-10
+}
+set ::workmode showhal
+set ::watchInterval 100
+set ::col1_width 100
+set ::ffmts 
+set ::ifmts 
+set ::alwaysOnTop 0
+set ::autoSaveWatchlist 1
