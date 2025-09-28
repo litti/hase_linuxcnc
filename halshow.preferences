@@ -18,8 +18,18 @@ set ::watchlist {
     pin+joint.2.pos-lim-sw-in
     pin+hm2_7i76e.0.7i76.0.0.input-23
     pin+hm2_7i76e.0.7i76.0.0.input-10
+    param+br_dustseal.state
+    pin+hm2_7i76e.0.7i76.0.0.output-00
+    pin+hm2_7i76e.0.7i76.0.0.output-01
+    pin+hm2_7i76e.0.7i76.0.0.output-02
+    pin+hm2_7i76e.0.7i76.0.0.output-03
+    pin+hm2_7i76e.0.7i76.0.0.output-04
+    pin+hm2_7i76e.0.7i76.0.0.output-05
+    pin+spindle-clamp-tool.in
+    pin+spindle-clamp-tool.out
+    pin+spindle-clamp-tool.time
 }
-set ::workmode showhal
+set ::workmode watchhal
 set ::watchInterval 100
 set ::col1_width 100
 set ::ffmts 

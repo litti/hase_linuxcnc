@@ -15,7 +15,7 @@
 # 1. provide toggle to process the push button signal and maintain a constant state
 #  during manual interaction spindle-running = LOW is checked as a redundancy
 # 2. Evaluate signaltrain from both manual and automatic interaction AND check against spindle-running using lut5 (2nd redundancy)
-# Thereby creating the drawbar_open signal (and its inverted state drawbar_open_inv)
+# Thereby creating the spindle-release-tool signal (and its inverted state drawbar_is_closed)
 
 # For automatic interaction only one pin remains, which gives the machine a trigger signal to open or close similar to the toggled manual interaction signal
 
@@ -57,24 +57,24 @@ net signal_toogle_manualatc toogle_manualatc.out
 # spindle-running is the check signal to ensure that the spindle is not running
 
 # Load lut5 Tables
-addf lut5.drawbar_open servo-thread
-# output of lut5.drawbar_open HIGH when
+addf lut5.spindle-release-tool servo-thread
+# output of lut5.spindle-release-tool HIGH when
 # in0 signal_toogle_manualatc = HIGH 
 # in1 motion.digital-out-01 = HIGH (or signal_toogle_manualatc; both ok too)
 # in2 spindle-running = LOW
 # corresponds to 1110 = hex E 
-setp lut5.drawbar_open.function 0xE
-net signal_toogle_manualatc lut5.drawbar_open.in-0
-net signal_automatic_atc motion.digital-out-01 lut5.drawbar_open.in-1
-net spinle-running  lut5.drawbar_open.in-2
+setp lut5.spindle-release-tool.function 0xE
+net signal_toogle_manualatc lut5.spindle-release-tool.in-0
+net signal_automatic_atc motion.digital-out-01 lut5.spindle-release-tool.in-1
+net spinle-running  lut5.spindle-release-tool.in-2
 
-# 2.1 drawbar_open signal
-net drawbar_open lut5.drawbar_open.out
+# 2.1 spindle-release-tool signal
+net spindle-release-tool lut5.spindle-release-tool.out
 
-# Invert the drawbar_open signal to create the opposing signal
-addf n_drawbar_open servo-thread
-net drawbar_open => n_drawbar_open.in
-net drawbar_open_inv <= n_drawbar_open.out
+# Invert the spindle-release-tool signal to create the opposing signal
+addf spindle-clamp-tool servo-thread
+net spindle-release-tool => spindle-clamp-tool.in
+net drawbar_is_closed <= spindle-clamp-tool.out
 
 
 # This is a map of the pocketprepnumber to an analog pin to correctly transfer the informaton into the M6 remap as the regular handler appears to be broken

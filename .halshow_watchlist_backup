@@ -8,12 +8,12 @@ sig+br_water_io_off
 sig+br_water_io_auto_led
 sig+br_water_io_auto
 param+br_water.state
-sig+cooling_enable
+sig+spindle-cooling-active
 sig+coolant-mist
 sig+coolant-flood
 sig+atc_manual_toogle_button
 sig+atc_toggleout
-sig+drawbar_open
+sig+spindle-release-tool
 pin+hm2_7i76e.0.7i76.0.0.output-00
 pin+hm2_7i76e.0.7i76.0.0.output-01
 pin+hm2_7i76e.0.7i76.0.0.output-02

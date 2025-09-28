@@ -1,0 +1,15 @@
+loadusr -W wj200_vfd --device /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_AQ00I1IK-if00-port0 --baud 9600 --parity N --stopbits 1 --databits 8
+  
+# 1) Enable VOR dem Slave setzen
+setp wj200-vfd.0.enable true
+
+# 2) Jetzt den Poller starten
+setp wj200-vfd.0.mbslaveaddr 1
+
+show pin wj200-vfd.0.*
+
+setp wj200-vfd.0.enable true
+setp wj200-vfd.0.commanded-frequency 25
+setp wj200-vfd.0.run true
+
+unloadusr wj200_vfd

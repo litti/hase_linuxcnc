@@ -1,13 +1,8 @@
-# --- TB6, Pin 8; Input 8 ---
-# Connect JMC IHSV/IHSS alarm signal X
-net x-axis-drive-alarm   <=  hm2_7i76e.0.7i76.0.0.input-08
-# --- TB6, Pin 10; Input 10 ---
-# Connect JMC IHSV/IHSS alarm signal Z
-net z-axis-drive-alarm   <=  hm2_7i76e.0.7i76.0.0.input-10
+net x-axis-drive-alarm <= hm2_7i76e.0.7i76.0.0.input-08
+net y-axis-drive-alarm <= hm2_7i76e.0.7i76.0.0.input-09
+net z-axis-drive-alarm <= hm2_7i76e.0.7i76.0.0.input-10
 
-# ---DO-00 --- 
-# Start spindle water pump
-net cooling_enable   =>  hm2_7i76e.0.7i76.0.0.output-00
+net spindle-cooling-active => hm2_7i76e.0.7i76.0.0.output-02
 
 # ---DO-01 --- DISABLED ATM AL !!!!!!!!!!!!!
 #addf or.coolant servo-thread
@@ -20,6 +15,6 @@ net cooling_enable   =>  hm2_7i76e.0.7i76.0.0.output-00
 # valve 2.2 Air inlet / Werkzeugwechsel Spindel
 # when high this valve is open 
 # normal condition = drawbar closed ==> this pin = low
-#  signal drawbar_open is defined as: when high ==> OPEN
-# This means that this pin gets the inverted signal of drawbar_open (drawbar_open_inv) which is HIGH
-net drawbar_open  hm2_7i76e.0.7i76.0.0.output-04
+#  signal spindle-release-tool is defined as: when high ==> OPEN
+# This means that this pin gets the inverted signal of spindle-release-tool (drawbar_is_closed) which is HIGH
+net spindle-release-tool  hm2_7i76e.0.7i76.0.0.output-04
