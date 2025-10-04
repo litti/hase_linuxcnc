@@ -14,19 +14,16 @@ net spindle-index-enable      <=>  spindle.0.index-enable
 #*********************************
 # VFD connection via Modbus 
 # load from different device (i.e. USB when not using onboard components; Baudrate needs to be set in VFD using Hitachi ProDrive)
-loadusr -W wj200_vfd --device /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_AQ00I1IK-if00-port0 --baud 9600 --parity N --stopbits 1 --databits 8
+loadusr -W wj200_vfd --device /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_AQ00I1IK-if00-port0 --baud 9600 --databits 8 --parity N --stopbits 1
 setp wj200-vfd.0.enable true
 setp wj200-vfd.0.mbslaveaddr 1
 
-# --- Spindelsteuerung: Standard-Pins nutzen ---
-# Enable/EIN
-net pdnt.spindle.is-on => wj200-vfd.0.enable
-# Richtung
+#net pdnt.spindle.is-on => wj200-vfd.0.enable # !!! auskommentiert, sorgt für error E12.1 am vfd
 net spindle-cw  => wj200-vfd.0.run
 net spindle-ccw => wj200-vfd.0.reverse
 
 # --- Drehzahl: RPM -> Hz skalieren ---
-loadrt scale count=1
+loadrt scale count=2 # scale.0 rpm->hz, scale.1 v->bar
 addf scale.0 servo-thread
 setp scale.0.gain 0.0166667   # 1/60: RPM zu Hz
 
@@ -35,4 +32,4 @@ net spindle-hz-cmd  scale.0.out         => wj200-vfd.0.commanded-frequency
 
 # --- Rückmeldungen zurück an LinuxCNC ---
 net spindle-at-speed  wj200-vfd.0.is-at-speed => spindle.0.at-speed
-net spindle-running <= wj200-vfd.0.is-running
+net spindle-running   <= wj200-vfd.0.is-running

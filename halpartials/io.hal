@@ -1,7 +1,12 @@
+net airpressure <= hm2_7i76e.0.7i76.0.0.input-07
+
 net x-axis-drive-alarm <= hm2_7i76e.0.7i76.0.0.input-08
 net y-axis-drive-alarm <= hm2_7i76e.0.7i76.0.0.input-09
 net z-axis-drive-alarm <= hm2_7i76e.0.7i76.0.0.input-10
+net tool_in_spindle    <= hm2_7i76e.0.7i76.0.0.input-11
+net cone_open          <= hm2_7i76e.0.7i76.0.0.input-12
 
+net estop-out              => hm2_7i76e.0.7i76.0.0.output-00
 net spindle-cooling-active => hm2_7i76e.0.7i76.0.0.output-02
 
 # ---DO-01 --- DISABLED ATM AL !!!!!!!!!!!!!

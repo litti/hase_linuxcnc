@@ -1,4 +1,4 @@
-# halshow watchlist created Sat Oct 04 16:46:52 CEST 2025
+# halshow watchlist created Sat Oct 04 16:47:30 CEST 2025
 
 pin+hm2_7i76e.0.7i76.0.0.input-13-not
 pin+joint.0.home-sw-in
@@ -23,8 +23,7 @@ pin+hm2_7i76e.0.7i76.0.0.output-00
 pin+hm2_7i76e.0.7i76.0.0.output-01
 pin+hm2_7i76e.0.7i76.0.0.output-02
 pin+hm2_7i76e.0.7i76.0.0.output-03
-pin+hm2_7i76e.0.7i76.0.0.output-04
 pin+hm2_7i76e.0.7i76.0.0.output-05
+pin+hm2_7i76e.0.7i76.0.0.output-06
 pin+spindle-clamp-tool.in
 pin+spindle-clamp-tool.out
-pin+spindle-clamp-tool.time

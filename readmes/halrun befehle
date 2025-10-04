@@ -1,4 +1,4 @@
-loadusr -W wj200_vfd --device /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_AQ00I1IK-if00-port0 --baud 9600 --parity N --stopbits 1 --databits 8
+loadusr -W wj200_vfd --device /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_AQ00I1IK-if00-port0 --baud 9600 --databits 8 --parity N --stopbits 1
   
 # 1) Enable VOR dem Slave setzen
 setp wj200-vfd.0.enable true

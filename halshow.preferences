@@ -1,6 +1,6 @@
 # Halshow settings
 # This file is generated automatically.
-wm geometry . 1238x707+665+131
+wm geometry . 807x800+1060+91
 placeFrames 0.38226744186046513
 set ::ratio 0.38226744186046513
 set ::old_w_leftf 160
@@ -16,18 +16,31 @@ set ::watchlist {
     pin+hm2_7i76e.0.7i76.0.0.input-15-not
     pin+joint.2.home-sw-in
     pin+joint.2.pos-lim-sw-in
+    pin+hm2_7i76e.0.7i76.0.0.analogin0
+    pin+hm2_7i76e.0.7i76.0.0.input-06
+    pin+hm2_7i76e.0.7i76.0.0.input-07
+    pin+hm2_7i76e.0.7i76.0.0.input-11
+    pin+hm2_7i76e.0.7i76.0.0.input-12
     pin+hm2_7i76e.0.7i76.0.0.input-23
     pin+hm2_7i76e.0.7i76.0.0.input-10
-    param+br_dustseal.state
+    param+br_coneclean.state
     pin+hm2_7i76e.0.7i76.0.0.output-00
     pin+hm2_7i76e.0.7i76.0.0.output-01
     pin+hm2_7i76e.0.7i76.0.0.output-02
     pin+hm2_7i76e.0.7i76.0.0.output-03
-    pin+hm2_7i76e.0.7i76.0.0.output-04
     pin+hm2_7i76e.0.7i76.0.0.output-05
+    pin+hm2_7i76e.0.7i76.0.0.output-06
     pin+spindle-clamp-tool.in
     pin+spindle-clamp-tool.out
-    pin+spindle-clamp-tool.time
+    pin+spindle.0.index-enable
+    sig+machine.is-on
+    sig+estop-out
+    pin+halui.estop.is-activated
+    pin+halui.estop.reset
+    pin+motion.distance-to-go
+    pin+motion.enable
+    pin+iocontrol.0.user-enable-out
+    pin+iocontrol.0.user-request-enable
 }
 set ::workmode watchhal
 set ::watchInterval 100
