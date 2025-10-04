@@ -334,6 +334,7 @@
                     <property name="button-on-text" translatable="yes">On</property>
                     <property name="button-text" translatable="yes">On</property>
                     <property name="corner-radius">1</property>
+                    <property name="create-enable-pin">True</property>
                     <property name="font-off-color">#000000000000</property>
                     <property name="font-on-color">#000000000000</property>
                     <property name="light-off-color">#e6e6e6e6e6e6</property>
@@ -516,7 +517,22 @@
               </packing>
             </child>
             <child>
-              <placeholder/>
+              <object class="HAL_LightButton" id="btn_air_sealed">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="border-width">3</property>
+                <property name="button-halio-pin">False</property>
+                <property name="button-text" translatable="yes">Air sealed</property>
+                <property name="corner-radius">1</property>
+                <property name="font-off-color">#000000000000</property>
+                <property name="font-on-color">#000000000000</property>
+                <property name="light-off-color">#e6e6e6e6e6e6</property>
+                <property name="light-on-color">#000080800000</property>
+              </object>
+              <packing>
+                <property name="left-attach">2</property>
+                <property name="top-attach">1</property>
+              </packing>
             </child>
             <child>
               <placeholder/>

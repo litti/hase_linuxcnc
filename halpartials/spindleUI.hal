@@ -14,6 +14,10 @@ net spindle-not-running  f_spindle_not_running.out      => spindleUI.btn_open_co
 net open-cone-manually   hm2_7i76e.0.7i76.0.0.output-05 <= spindleUI.btn_open_cone-button
 net open-cone-manually   => spindleUI.btn_open_cone-light
 
+#air sealed
+net air-sealed   hm2_7i76e.0.7i76.0.0.output-03 <= spindleUI.btn_air_sealed-button
+net air-sealed   => spindleUI.btn_air_sealed-light
+
 # button row water cooling
 net br_water_io_auto         br_water.io-auto  <= spindleUI.lb_water_auto-button
 net br_water_io_auto_led     br_water.led-auto => spindleUI.lb_water_auto-light
@@ -25,15 +29,19 @@ net br_water_io_on_led       br_water.led-on   => spindleUI.lb_water_on-light
 net spindle-cooling-active   br_water.out
 
 # button row cone clean
+addf ands.cone_open_and_clean servo-thread
 net br_conecleanio_auto      br_coneclean.io-auto  <= spindleUI.btn_coneclean_auto-button
 net br_conecleanio_auto_led  br_coneclean.led-auto => spindleUI.btn_coneclean_auto-light
 net br_conecleanio_off       br_coneclean.io-off   <= spindleUI.btn_coneclean_off-button
 net br_conecleanio_off_led   br_coneclean.led-off  => spindleUI.btn_coneclean_off-light
+net open-cone-manually       => spindleUI.btn_coneclean_on-enable
 net br_conecleanio_on        br_coneclean.io-on    <= spindleUI.btn_coneclean_on-button
 net br_conecleanio_on_led    br_coneclean.led-on   => spindleUI.btn_coneclean_on-light
 #net spindle-enable           br_coneclean.val-auto
-net dustsealair_enable       br_coneclean.out
-net dustsealair_enable       => hm2_7i76e.0.7i76.0.0.output-06
+net clean-cone               br_coneclean.out
+net clean-cone         => ands.cone_open_and_clean.in0
+net open-cone-manually => ands.cone_open_and_clean.in1
+net activate-v_2_4 ands.cone_open_and_clean.out => hm2_7i76e.0.7i76.0.0.output-06
 
 #4. Wenn man das Modul sperren möchte (so wie ich die Ventile vom ATC wenn die Spindel dreht :huh: ), geht das über den disable-Eingang. Der setzt out hart auf 0.
 # net spindle-running br_lock.disable
