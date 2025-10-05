@@ -23,7 +23,6 @@ set ::watchlist {
     pin+hm2_7i76e.0.7i76.0.0.input-12
     pin+hm2_7i76e.0.7i76.0.0.input-23
     pin+hm2_7i76e.0.7i76.0.0.input-10
-    param+br_coneclean.state
     pin+hm2_7i76e.0.7i76.0.0.output-00
     pin+hm2_7i76e.0.7i76.0.0.output-01
     pin+hm2_7i76e.0.7i76.0.0.output-02
@@ -32,7 +31,6 @@ set ::watchlist {
     pin+hm2_7i76e.0.7i76.0.0.output-06
     pin+spindle-clamp-tool.in
     pin+spindle-clamp-tool.out
-    sig+ands.cone_open_and_clean
     pin+ands.cone_open_and_clean.in0
     pin+ands.cone_open_and_clean.in1
     pin+ands.cone_open_and_clean.out
