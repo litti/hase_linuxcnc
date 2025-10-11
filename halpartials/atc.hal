@@ -43,9 +43,9 @@ net signal_toogle_manualatc toogle_manualatc.out
 
 # When signal_toogle_manualatc = high ==> release a tool
 # We need an inverted atc_toogleout signal for some pins
-#addf n_atctoggle servo-thread
-#net signal_toogle_manualatc <= n_atctoggle.in
-#net signal_toogle_manualatc_inverted => n_atctoggle.out
+#addf not.atc-toggle servo-thread
+#net signal_toogle_manualatc <= not.atc-toggle.in
+#net signal_toogle_manualatc_inverted => not.atc-toggle.out
 
 
 #*******************

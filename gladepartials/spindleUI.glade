@@ -450,8 +450,9 @@
                     <property name="can-focus">False</property>
                     <property name="blink-when-off">True</property>
                     <property name="is-on">True</property>
-                    <property name="led-blink-rate">0</property>
-                    <property name="pick-color-blink">#ffffa3a34848</property>
+                    <property name="led-blink-rate">1</property>
+                    <property name="pick-color-blink">#f17d2c45dc2b</property>
+                    <property name="pick-color-off">#ffffffffffff</property>
                     <property name="pick-color-on">#c0c0bfbfbcbc</property>
                   </object>
                   <packing>

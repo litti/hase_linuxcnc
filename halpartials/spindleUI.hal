@@ -8,7 +8,17 @@ net open-cone-manually   => spindleUI.btn_open_cone-light
 net air-sealed  hm2_7i76e.0.7i76.0.0.output-03 <= spindleUI.btn_air_sealed-button
 net air-sealed  => spindleUI.btn_air_sealed-light
 
-net spindle-cooling-active   spindleUI.btn_cool_spindle-button spindleUI.btn_cool_spindle-light
+addf ands.cooling-active-and-no-alarm servo-thread
+addf ors.cooling-off-or-on-and-no-alarm servo-thread
+addf not.cooling-active servo-thread
+net spindle-cooling-active       spindleUI.btn_cool_spindle-button spindleUI.btn_cool_spindle-light ands.cooling-active-and-no-alarm.in0 not.cooling-active.in
+net spindle-cooling-inactive     not.cooling-active.out ors.cooling-off-or-on-and-no-alarm.in0
+net cooling-alarm-inactive       ands.cooling-active-and-no-alarm.in1
+net cooling-active-and-no-alarm  ands.cooling-active-and-no-alarm.out ors.cooling-off-or-on-and-no-alarm.in1
+#wenn kühlung aus - led an (weil alarm default high ist)
+#wenn kühlung an und kein alarm - led an
+#wenn kühlung an und alarm - led aus - led blinkt dann
+net cooling-alarm-led-on        ors.cooling-off-or-on-and-no-alarm.out spindleUI.leds.cooling_alarm
 
 addf ands.cone_open_and_clean servo-thread
 net open-cone-manually => spindleUI.btn_clean_cone-enable
@@ -24,7 +34,7 @@ net motorcurrentUI      wj200-vfd.0.motor-current => spindleUI.meter_amps
 net spindle-vel-cmd-rpm spindleUI.meter_rpm
 
 #Drucksensor Ventil 1.1 (Air sealed)
-addf scale.1 servo-thread
+addf scale.1        servo-thread
 setp scale.1.gain   1.5937499502
 setp scale.1.offset 0
 setp hm2_7i76e.0.7i76.0.0.analogin0-scalemax 24

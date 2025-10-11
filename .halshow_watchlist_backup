@@ -1,4 +1,4 @@
-# halshow watchlist created Sat Oct 04 18:57:16 CEST 2025
+# halshow watchlist created Mon Oct 06 18:44:18 CEST 2025
 
 pin+hm2_7i76e.0.7i76.0.0.input-13-not
 pin+joint.0.home-sw-in
@@ -18,7 +18,6 @@ pin+hm2_7i76e.0.7i76.0.0.input-11
 pin+hm2_7i76e.0.7i76.0.0.input-12
 pin+hm2_7i76e.0.7i76.0.0.input-23
 pin+hm2_7i76e.0.7i76.0.0.input-10
-param+br_coneclean.state
 pin+hm2_7i76e.0.7i76.0.0.output-00
 pin+hm2_7i76e.0.7i76.0.0.output-01
 pin+hm2_7i76e.0.7i76.0.0.output-02
@@ -27,12 +26,6 @@ pin+hm2_7i76e.0.7i76.0.0.output-05
 pin+hm2_7i76e.0.7i76.0.0.output-06
 pin+spindle-clamp-tool.in
 pin+spindle-clamp-tool.out
-pin+spindle.0.index-enable
-sig+machine.is-on
-sig+estop-out
-pin+halui.estop.is-activated
-pin+halui.estop.reset
-pin+motion.distance-to-go
-pin+motion.enable
-pin+iocontrol.0.user-enable-out
-pin+iocontrol.0.user-request-enable
+pin+ands.cone_open_and_clean.in0
+pin+ands.cone_open_and_clean.in1
+pin+ands.cone_open_and_clean.out
