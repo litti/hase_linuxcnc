@@ -153,92 +153,6 @@
               </packing>
             </child>
             <child>
-              <object class="HAL_LED" id="leds.tool_in_spindle">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="led-blink-rate">0</property>
-              </object>
-              <packing>
-                <property name="left-attach">0</property>
-                <property name="top-attach">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="label" translatable="yes">Halter in Spindel</property>
-              </object>
-              <packing>
-                <property name="left-attach">1</property>
-                <property name="top-attach">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="HAL_LED" id="leds.cone_is_open">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="led-blink-rate">0</property>
-              </object>
-              <packing>
-                <property name="left-attach">0</property>
-                <property name="top-attach">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="label" translatable="yes">Konus geöffnet</property>
-              </object>
-              <packing>
-                <property name="left-attach">1</property>
-                <property name="top-attach">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="HAL_LightButton" id="btn_open_cone">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="border-width">3</property>
-                <property name="button-halio-pin">False</property>
-                <property name="button-on-text" translatable="yes">Konus offen / schließe Konus</property>
-                <property name="button-text" translatable="yes">öffne Konus</property>
-                <property name="corner-radius">1</property>
-                <property name="create-enable-pin">True</property>
-                <property name="font-off-color">#000000000000</property>
-                <property name="font-on-color">#000000000000</property>
-                <property name="light-off-color">#e6e6e6e6e6e6</property>
-                <property name="light-on-color">#ffff00000000</property>
-              </object>
-              <packing>
-                <property name="left-attach">2</property>
-                <property name="top-attach">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="HAL_LED" id="led_clamptool">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="led-blink-rate">0</property>
-              </object>
-              <packing>
-                <property name="left-attach">0</property>
-                <property name="top-attach">3</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="label" translatable="yes">Clamp tool</property>
-              </object>
-              <packing>
-                <property name="left-attach">1</property>
-                <property name="top-attach">3</property>
-              </packing>
-            </child>
-            <child>
               <object class="HAL_LED" id="led_unclamptool">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
@@ -370,25 +284,6 @@
               </packing>
             </child>
             <child>
-              <object class="HAL_LightButton" id="btn_air_sealed">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="border-width">3</property>
-                <property name="button-halio-pin">False</property>
-                <property name="button-on-text" translatable="yes">Sperrluft aktiv</property>
-                <property name="button-text" translatable="yes">aktiviere Sperrluft</property>
-                <property name="corner-radius">1</property>
-                <property name="font-off-color">#000000000000</property>
-                <property name="font-on-color">#000000000000</property>
-                <property name="light-off-color">#e6e6e6e6e6e6</property>
-                <property name="light-on-color">#000080800000</property>
-              </object>
-              <packing>
-                <property name="left-attach">2</property>
-                <property name="top-attach">1</property>
-              </packing>
-            </child>
-            <child>
               <object class="HAL_LightButton" id="btn_clean_cone">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
@@ -406,25 +301,6 @@
               <packing>
                 <property name="left-attach">2</property>
                 <property name="top-attach">5</property>
-              </packing>
-            </child>
-            <child>
-              <object class="HAL_LightButton" id="btn_cool_spindle">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="border-width">3</property>
-                <property name="button-halio-pin">False</property>
-                <property name="button-on-text" translatable="yes">Spindelkühlung aktiv</property>
-                <property name="button-text" translatable="yes">kühle Spindel</property>
-                <property name="corner-radius">1</property>
-                <property name="font-off-color">#000000000000</property>
-                <property name="font-on-color">#000000000000</property>
-                <property name="light-off-color">#e6e6e6e6e6e6</property>
-                <property name="light-on-color">#000080800000</property>
-              </object>
-              <packing>
-                <property name="left-attach">2</property>
-                <property name="top-attach">6</property>
               </packing>
             </child>
             <child>
@@ -465,6 +341,230 @@
               <packing>
                 <property name="left-attach">0</property>
                 <property name="top-attach">6</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkBox">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="homogeneous">True</property>
+                <child>
+                  <object class="HAL_LightButton" id="btns.spindle-cooling.auto">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="border-width">3</property>
+                    <property name="button-text" translatable="yes">auto</property>
+                    <property name="corner-radius">1</property>
+                    <property name="create-enable-pin">True</property>
+                    <property name="font-off-color">#000000000000</property>
+                    <property name="font-on-color">#000000000000</property>
+                    <property name="light-is-on">True</property>
+                    <property name="light-off-color">#e6e6e6e6e6e6</property>
+                    <property name="light-on-color">#f6f6d3d32d2d</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="HAL_LightButton" id="btns.spindle-cooling.on">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="border-width">3</property>
+                    <property name="button-text" translatable="yes">ein</property>
+                    <property name="corner-radius">1</property>
+                    <property name="create-enable-pin">True</property>
+                    <property name="font-off-color">#000000000000</property>
+                    <property name="font-on-color">#000000000000</property>
+                    <property name="light-off-color">#e6e6e6e6e6e6</property>
+                    <property name="light-on-color">#000080800000</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="HAL_LightButton" id="btns.spindle-cooling.off">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="border-width">3</property>
+                    <property name="button-text" translatable="yes">aus</property>
+                    <property name="corner-radius">1</property>
+                    <property name="create-enable-pin">True</property>
+                    <property name="font-off-color">#000000000000</property>
+                    <property name="font-on-color">#000000000000</property>
+                    <property name="light-off-color">#e6e6e6e6e6e6</property>
+                    <property name="light-on-color">#ffff00000000</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="left-attach">2</property>
+                <property name="top-attach">6</property>
+              </packing>
+            </child>
+            <child>
+              <object class="HAL_LightButton" id="btn_open_cone">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="border-width">3</property>
+                <property name="button-halio-pin">False</property>
+                <property name="button-on-text" translatable="yes">Konus offen / schließe Konus</property>
+                <property name="button-text" translatable="yes">öffne Konus</property>
+                <property name="corner-radius">1</property>
+                <property name="create-enable-pin">True</property>
+                <property name="font-off-color">#000000000000</property>
+                <property name="font-on-color">#000000000000</property>
+                <property name="light-off-color">#e6e6e6e6e6e6</property>
+                <property name="light-on-color">#ffff00000000</property>
+              </object>
+              <packing>
+                <property name="left-attach">2</property>
+                <property name="top-attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Konus geöffnet</property>
+              </object>
+              <packing>
+                <property name="left-attach">1</property>
+                <property name="top-attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Sperrluft</property>
+              </object>
+              <packing>
+                <property name="left-attach">1</property>
+                <property name="top-attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Halter in Spindel</property>
+              </object>
+              <packing>
+                <property name="left-attach">1</property>
+                <property name="top-attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="HAL_LED" id="leds.tool_in_spindle">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="led-blink-rate">0</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkBox">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="homogeneous">True</property>
+                <child>
+                  <object class="HAL_LightButton" id="btns.air-sealed.auto">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="border-width">3</property>
+                    <property name="button-text" translatable="yes">auto</property>
+                    <property name="corner-radius">1</property>
+                    <property name="create-enable-pin">True</property>
+                    <property name="font-off-color">#000000000000</property>
+                    <property name="font-on-color">#000000000000</property>
+                    <property name="light-is-on">True</property>
+                    <property name="light-off-color">#e6e6e6e6e6e6</property>
+                    <property name="light-on-color">#f6f6d3d32d2d</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="HAL_LightButton" id="btns.air-sealed.on">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="border-width">3</property>
+                    <property name="button-text" translatable="yes">ein</property>
+                    <property name="corner-radius">1</property>
+                    <property name="create-enable-pin">True</property>
+                    <property name="font-off-color">#000000000000</property>
+                    <property name="font-on-color">#000000000000</property>
+                    <property name="light-off-color">#e6e6e6e6e6e6</property>
+                    <property name="light-on-color">#000080800000</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="HAL_LightButton" id="btns.air-sealed.off">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="border-width">3</property>
+                    <property name="button-text" translatable="yes">aus</property>
+                    <property name="corner-radius">1</property>
+                    <property name="create-enable-pin">True</property>
+                    <property name="font-off-color">#000000000000</property>
+                    <property name="font-on-color">#000000000000</property>
+                    <property name="light-off-color">#e6e6e6e6e6e6</property>
+                    <property name="light-on-color">#ffff00000000</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="left-attach">2</property>
+                <property name="top-attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="HAL_LED" id="leds.cone_is_open">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="led-blink-rate">0</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="HAL_LED" id="leds.air_sealed">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="led-blink-rate">0</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">2</property>
               </packing>
             </child>
             <child>

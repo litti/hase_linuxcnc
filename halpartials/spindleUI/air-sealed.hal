@@ -1,0 +1,11 @@
+#Steuerung der 3 Buttons auto, on, off
+addf btnrows.air-sealed servo-thread
+net estop-out                    btnrows.air-sealed.enable spindleUI.btns.air-sealed.auto-enable spindleUI.btns.air-sealed.on-enable spindleUI.btns.air-sealed.off-enable
+net btnrows.air-sealed-auto      btnrows.air-sealed.automatic  <= spindleUI.btns.air-sealed.auto-button
+net btnrows.air-sealed-auto_led  btnrows.air-sealed.auto-light => spindleUI.btns.air-sealed.auto-light
+net btnrows.air-sealed-off       btnrows.air-sealed.off        <= spindleUI.btns.air-sealed.off-button
+net btnrows.air-sealed-off_led   btnrows.air-sealed.off-light  => spindleUI.btns.air-sealed.off-light
+net btnrows.air-sealed-on        btnrows.air-sealed.on         <= spindleUI.btns.air-sealed.on-button
+net btnrows.air-sealed-on_led    btnrows.air-sealed.on-light   => spindleUI.btns.air-sealed.on-light
+net spindle-running              btnrows.air-sealed.if-auto-set-out-to-this
+net air-sealed-active            btnrows.air-sealed.out hm2_7i76e.0.7i76.0.0.output-03 spindleUI.leds.air_sealed

@@ -1,0 +1,24 @@
+#Steuerung der 3 Buttons auto, on, off
+addf btnrows.spindle-cooling servo-thread
+net estop-out                         btnrows.spindle-cooling.enable spindleUI.btns.spindle-cooling.auto-enable spindleUI.btns.spindle-cooling.on-enable spindleUI.btns.spindle-cooling.off-enable
+net btnrows.spindle-cooling-auto      btnrows.spindle-cooling.automatic  <= spindleUI.btns.spindle-cooling.auto-button
+net btnrows.spindle-cooling-auto_led  btnrows.spindle-cooling.auto-light => spindleUI.btns.spindle-cooling.auto-light
+net btnrows.spindle-cooling-off       btnrows.spindle-cooling.off        <= spindleUI.btns.spindle-cooling.off-button
+net btnrows.spindle-cooling-off_led   btnrows.spindle-cooling.off-light  => spindleUI.btns.spindle-cooling.off-light
+net btnrows.spindle-cooling-on        btnrows.spindle-cooling.on         <= spindleUI.btns.spindle-cooling.on-button
+net btnrows.spindle-cooling-on_led    btnrows.spindle-cooling.on-light   => spindleUI.btns.spindle-cooling.on-light
+net spindle-running                   btnrows.spindle-cooling.if-auto-set-out-to-this
+net spindle-cooling-active            btnrows.spindle-cooling.out
+
+#Steuerung der LEDs
+addf ands.cooling-active-and-no-alarm servo-thread
+addf ors.cooling-off-or-on-and-no-alarm servo-thread
+addf not.cooling-active servo-thread
+net spindle-cooling-active       ands.cooling-active-and-no-alarm.in0 not.cooling-active.in spindleUI.leds.cooling_active
+net spindle-cooling-inactive     not.cooling-active.out ors.cooling-off-or-on-and-no-alarm.in0
+net cooling-alarm-inactive       ands.cooling-active-and-no-alarm.in1
+net cooling-active-and-no-alarm  ands.cooling-active-and-no-alarm.out ors.cooling-off-or-on-and-no-alarm.in1
+#wenn kühlung aus - led an (weil alarm default high ist)
+#wenn kühlung an und kein alarm - led an
+#wenn kühlung an und alarm - led aus - led blinkt dann
+net cooling-alarm-led-on        ors.cooling-off-or-on-and-no-alarm.out spindleUI.leds.cooling_alarm

@@ -1,16 +1,17 @@
 component buttonrow "Button Mux";
-pin io bit io_auto;
-pin io bit io_on;
-pin io bit io_off;
+pin io bit automatic;
+pin io bit on;
+pin io bit off;
 
-pin out bit led_auto;
-pin out bit led_on;
-pin out bit led_off;
+pin out bit auto_light;
+pin out bit on_light;
+pin out bit off_light;
+pin out bit disabled;
 
-pin in bit val_auto;
+pin in bit if_auto_set_out_to_this;
 pin out bit out;
 
-pin in bit disable;
+pin in bit enable;
 
 param rw unsigned state = 0;
 
@@ -19,36 +20,47 @@ license "GPL"; // indicates GPL v2 or later
 ;;
 int tmp = 0;
 
-if (disable) {
-	out=0;
-} else {
-	if (io_auto==1) state=0;
-	if (io_off==1) state=1;
-	if (io_on==1) state=2;
+if (enable)
+{
+	if (automatic == 1) state = 0;
+	if (off == 1) state = 1;
+	if (on == 1) state = 2;
 
 	switch (state) {
 		// Auto
-		 case 0: 	led_auto = 1;
-				led_off = 0;
-				led_on=0;	
-				out=val_auto;
-				break;
+		case 0:
+		 	auto_light = 1;
+			off_light = 0;
+			on_light = 0;	
+			out = if_auto_set_out_to_this;
+			break;
 		// Aus
-		 case 1: 	led_auto = 0;
-				led_off = 1;
-				led_on=0;
-				out=0;
-				break;
+		case 1:
+		  	auto_light = 0;
+			off_light = 1;
+			on_light = 0;
+			out = 0;
+			break;
 		// Ein
-		 case 2: 	led_auto = 0;
-				led_off = 0;
-				led_on=1;
-				out=1;
-				break;
-		}
+		case 2:
+		 	auto_light = 0;
+			off_light = 0;
+			on_light = 1;
+			out = 1;
+			break;
+	}
+
+	disabled = 0;
+}
+else
+{
+	auto_light = 0;
+	off_light = 0;
+	on_light = 0;
+	out = 0;
+	disabled = 1;
 }
 
-io_auto=0;
-io_on=0;
-io_off=0;
-
+automatic = 0;
+on = 0;
+off = 0;
