@@ -1,11 +1,12 @@
 net airpressure <= hm2_7i76e.0.7i76.0.0.input-07
 
-net x-axis-drive-alarm   <= hm2_7i76e.0.7i76.0.0.input-08
-net y-axis-drive-alarm   <= hm2_7i76e.0.7i76.0.0.input-09
-net z-axis-drive-alarm   <= hm2_7i76e.0.7i76.0.0.input-10
-net tool_in_spindle      <= hm2_7i76e.0.7i76.0.0.input-11
-net cone_open            <= hm2_7i76e.0.7i76.0.0.input-12
-net cooling-alarm-active <= hm2_7i76e.0.7i76.0.0.input-16
+net switch-toolchange-portal  <= hm2_7i76e.0.7i76.0.0.input-06 ors.open_cone.in1 ors.clean_cone_via_ui_or_switch.in1
+net x-axis-drive-alarm        <= hm2_7i76e.0.7i76.0.0.input-08
+net y-axis-drive-alarm        <= hm2_7i76e.0.7i76.0.0.input-09
+net z-axis-drive-alarm        <= hm2_7i76e.0.7i76.0.0.input-10
+net tool_in_spindle           <= hm2_7i76e.0.7i76.0.0.input-11
+net cone_open                 <= hm2_7i76e.0.7i76.0.0.input-12
+net cooling-alarm-active      <= hm2_7i76e.0.7i76.0.0.input-16
 
 addf not.cooling-alarm-active servo-thread
 net cooling-alarm-active   => not.cooling-alarm-active.in
@@ -13,6 +14,10 @@ net cooling-alarm-inactive <= not.cooling-alarm-active.out
 
 net estop-out              => hm2_7i76e.0.7i76.0.0.output-00
 net spindle-cooling-active => hm2_7i76e.0.7i76.0.0.output-02
+
+net open_cone                         ors.open_cone.out                            ands.spindle_not_running_and_open_cone.in1
+net spindle_is_not_running_open_cone  ands.spindle_not_running_and_open_cone.out   hm2_7i76e.0.7i76.0.0.output-05
+net activate-valve_clean_cone_2_4     ors.clean_cone_via_ui_or_switch.out          hm2_7i76e.0.7i76.0.0.output-06
 
 # ---DO-01 --- DISABLED ATM AL !!!!!!!!!!!!!
 #addf or.coolant servo-thread

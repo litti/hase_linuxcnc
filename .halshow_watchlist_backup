@@ -26,6 +26,6 @@ pin+hm2_7i76e.0.7i76.0.0.output-05
 pin+hm2_7i76e.0.7i76.0.0.output-06
 pin+spindle-clamp-tool.in
 pin+spindle-clamp-tool.out
-pin+ands.cone_open_and_clean.in0
-pin+ands.cone_open_and_clean.in1
-pin+ands.cone_open_and_clean.out
+pin+ands.open_and_clean_cone_via_ui.in0
+pin+ands.open_and_clean_cone_via_ui.in1
+pin+ands.open_and_clean_cone_via_ui.out
